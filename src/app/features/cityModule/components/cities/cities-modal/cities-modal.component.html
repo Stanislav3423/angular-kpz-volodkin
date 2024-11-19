@@ -1,0 +1,31 @@
+<div class="background">
+  <div class="modal">
+    
+    <div class="line"></div>
+    <div class="section">
+      <div class="section title">
+        <span class="section-title">City</span>
+        <input class="black-text" type="text" [(ngModel)]="city.name" placeholder="Enter city name">
+      </div>
+      <div class="section latitude">
+        <span class="section-value section-title">Latitude</span>
+        <input class="black-text" type="text" [(ngModel)]="city.latitude" placeholder="Enter latitude">
+      </div>
+      <div class="section longitude">
+        <span class="section-value section-title">Longitude</span>
+        <input class="black-text" type="text" [(ngModel)]="city.longitude" placeholder="Enter longitude">
+      </div>
+      <div class="section regionId">
+        <span class="section-value section-title">Region Id</span>
+        <input class="black-text" type="text" [(ngModel)]="city.regionId" placeholder="Enter region id">
+      </div>
+    </div>
+
+    <!-- <div class="line"></div> -->
+
+    <div class="button-group">
+      <button class="cancel-button" (click)="onClose()">Cancel</button>
+      <button class="save-button" (click)="onSave()">Save</button>
+    </div>
+  </div>
+</div>

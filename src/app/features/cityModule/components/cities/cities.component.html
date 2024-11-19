@@ -1,0 +1,17 @@
+<div class="body">
+  <h2>All Cities</h2>
+  <button class="add-button" (click)="onOpenModal(null)">Add City</button>
+
+  <div class="appointments" *ngFor="let city of cities">
+      <p class="title black-text">{{ city.name }}</p>
+      <p class="date black-text">Key: {{ city.id }}</p>
+      <p class="date black-text">Latitude: {{ city.latitude }}</p>
+      <p class="date black-text">Longitude: {{ city.longitude }}</p>
+      <p class="date black-text">Region id: {{ city.regionId }}</p>
+      <div class="line"></div>
+      <button class="delete-button" (click)="onDeleteCity(city.id)">Delete</button>
+      <button class="edit-button" (click)="onOpenModal(city)">Edit</button>
+  </div>
+  
+  <app-cities-modal *ngIf="isModalOpen"  [city]="selectedCity || { id: 0, name: '', latitude: 0, longitude: 0, regionId: 0 }" (closeModal)="onCloseModal()" (saveCity)="onSaveCity($event)"></app-cities-modal>
+</div>

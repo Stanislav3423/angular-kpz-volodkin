@@ -1,0 +1,36 @@
+<div class="background">
+  <div class="modal">
+    
+    <div class="line"></div>
+    <div class="section">
+      <div class="section title">
+        <span class="section-title">Observation</span>
+      </div>
+      <div class="section stationId ">
+        <span class="section-value section-title">Station id</span>
+        <input class="black-text" type="number" [(ngModel)]="observation.stationId" placeholder="Enter station id">
+      </div>
+      <div class="section temperature">
+        <span class="section-value section-title">Temperature</span>
+        <input class="black-text" type="number" [(ngModel)]="observation.temperature" placeholder="Enter temperature">
+      </div>
+      <div class="section humidity">
+        <span class="section-value section-title">Humidity</span>
+        <input class="black-text" type="number" [(ngModel)]="observation.humidity" placeholder="Enter humidity">
+      </div>
+      <div class="section windSpeed">
+        <span class="section-value section-title">Wind Speed</span>
+        <input class="black-text" type="number" [(ngModel)]="observation.windSpeed" placeholder="Enter wind speed">
+      </div>
+      <div class="section precipitation">
+        <span class="section-value section-title">Precipitation</span>
+        <input class="black-text" type="number" [(ngModel)]="observation.precipitation" placeholder="Enter precipitation">
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button class="cancel-button" (click)="onClose()">Cancel</button>
+      <button class="save-button" (click)="onSave()">Save</button>
+    </div>
+  </div>
+</div>

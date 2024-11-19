@@ -1,0 +1,16 @@
+<div class="body">
+    <h2>All Regions</h2>
+    <button class="add-button" (click)="onOpenModal(null)">Add Region</button>
+  
+    <div class="appointments" *ngFor="let region of regions">
+        <p class="title black-text">{{ region.name }}</p>
+        <p class="date black-text">Key: {{ region.id }}</p>
+        <p class="date black-text">Country: {{ region.country }}</p>
+        <div class="line"></div>
+        <button class="delete-button" (click)="onDeleteRegion(region.id)">Delete</button>
+        <button class="edit-button" (click)="onOpenModal(region)">Edit</button>
+    </div>
+    
+    <app-regions-modal *ngIf="isModalOpen"  [region]="selectedRegion || { id: 0, name: '', country: ''}" (closeModal)="onCloseModal()" (saveRegion)="onSaveRegion($event)"></app-regions-modal>
+  </div>
+  

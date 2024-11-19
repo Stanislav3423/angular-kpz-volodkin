@@ -1,0 +1,21 @@
+<div class="background">
+  <div class="modal">
+    
+    <div class="line"></div>
+    <div class="section">
+      <div class="section title">
+        <span class="section-title">Region</span>
+        <input class="black-text" type="text" [(ngModel)] = "region.name" placeholder="Enter region name">
+      </div>
+      <div class="section country">
+        <span class="section-value section-title">Country</span>
+        <input class="black-text" type="text" [(ngModel)]="region.country" placeholder="Enter country">
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button class="cancel-button" (click)="onClose()">Cancel</button>
+      <button class="save-button" (click)="onSave()">Save</button>
+    </div>
+  </div>
+</div>

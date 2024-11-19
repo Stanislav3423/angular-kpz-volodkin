@@ -1,0 +1,19 @@
+<div class="body">
+    <h2>All Observations</h2>
+    <button class="add-button" (click)="onOpenModal(null)">Add Observation</button>
+  
+    <div class="appointments" *ngFor="let observation of observations">
+        <p class="date black-text">Key: {{ observation.id }}</p>
+        <p class="date black-text">Station: {{ observation.stationId }}</p>
+        <p class="date black-text">Temperature: {{ observation.temperature }}</p>
+        <p class="date black-text">Humidity: {{ observation.humidity }}</p>
+        <p class="date black-text">Wind Speed: {{ observation.windSpeed }}</p>
+        <p class="date black-text">Precipitation: {{ observation.precipitation }}</p>
+        <div class="line"></div>
+        <button class="delete-button" (click)="onDeleteObservation(observation.id)">Delete</button>
+        <button class="edit-button" (click)="onOpenModal(observation)">Edit</button>
+    </div>
+    
+    <app-observations-modal *ngIf="isModalOpen"  [observation]="selectedObservation || { id: 0, stationId: 0, temperature: 0, humidity: 0, windSpeed: 0, precipitation: 0}" (closeModal)="onCloseModal()" (saveObservation)="onSaveObservation($event)"></app-observations-modal>
+  </div>
+  
